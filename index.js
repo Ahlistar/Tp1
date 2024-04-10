@@ -1,81 +1,59 @@
 const express = require('express');
 const cors = require('cors');
-const path = require('path'); // Import path module
+const path = require('path');
 const bodyParser = require('body-parser');
-
-
+const fs = require('fs');
+const recetas = require('./recetas');
 
 const app = express();
 const port = 3000;
 
-// Middleware para analizar el cuerpo de las solicitudes entrantes
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
-// Allow all cross-origin requests
 app.use(cors());
-
-// Middleware to parse JSON bodies
 app.use(express.json());
-
-// Middleware to parse URL-encoded bodies
 app.use(express.urlencoded({ extended: true }));
-
-// Serve static files from the public directory
 app.use(express.static(path.join(__dirname, 'public')));
 
-// -------------------------------------------- ENDPOINTS --------------------------------------------
-
-/****************************************
- * Business
-****************************************/
-
-app.get('/hola', async (req, res) => {
-  try{
-    res.status(200).send({"msg": "HOLA"})
-    }catch(e){
-      res.status(500).send({'error': 'Internal server error'})
-    }
-})
-
+/**********************************
+*para el trabajo de comunicaciones*
+***********************************/
 app.get('/jamon', async (req, res) => {
-  try{
-    res.status(200).send({"msg": "jamon con espinaca q rico"})
-    }catch(e){
-      res.status(500).send({'error': 'Internal server error'})
-    }
-})
+  try {
+    res.status(200).send({ "msg": "jamon con espinaca q rico" });
+  } catch (e) {
+    res.status(500).send({ 'error': 'Internal server error' });
+  }
+});
 
 app.post('/recetas', async (req, res) => {
-  try{
+  try {
     res.status(200).send({
       "queso con": req.body
-    })
-  }catch(e){
-    res.status(500).send({'error': 'Internal server error'})
+    });
+  } catch (e) {
+    res.status(500).send({ 'error': 'Internal server error' });
   }
-})
+});
 
-app.post('/jugador', async (req, res) => {
-  try{
-    res.status(200).send({
-      "queso con": req.body
-    })
-  }catch(e){
-    res.status(500).send({'error': 'Internal server error'})
+/****************************************
+ * Búsqueda de Recetas
+****************************************/
+
+// Endpoint para buscar recetas
+app.post('/buscar-recetas', async (req, res) => {
+  try {
+    const searchTerm = req.body.searchTerm; // Obtener el término de búsqueda del cuerpo de la solicitud
+    const recetasArray = recetas.leerRecetas(); // Utilizar la función leerRecetas del módulo recetas
+
+    // Filtrar recetas que coincidan con el término de búsqueda
+    const recetasCoincidentes = recetasArray.filter(receta => receta.contenido.toLowerCase().includes(searchTerm.toLowerCase()));
+
+    res.status(200).send(recetasCoincidentes);
+  } catch (e) {
+    res.status(500).send({ error: 'Error interno del servidor' });
   }
-})
-
-
-app.get('/boom', async (req, res) => {
-  res.status(500).json({ message: "My bad" })
-})
-
-app.get('/players/salary', async (req, res) => {
-  res.status(403).send({
-    'error': 'Cannot access this information'
-  })
-})
+});
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
