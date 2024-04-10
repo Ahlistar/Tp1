@@ -9,10 +9,4 @@ body {
     justify-content: center; /* Centramos horizontalmente */
     align-items: center; /* Centramos verticalmente */
     text-align: center; /* Alineamos el texto al centro */
-
-    .unifrakturmaguntia-regular {
-        font-family: "UnifrakturMaguntia", cursive;
-        font-weight: 400;
-        font-style: normal;
-    }
 }
