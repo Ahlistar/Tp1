@@ -38,11 +38,28 @@ app.get('/hola', async (req, res) => {
     }
 })
 
+app.get('/jamon', async (req, res) => {
+  try{
+    res.status(200).send({"msg": "jamon con espinaca q rico"})
+    }catch(e){
+      res.status(500).send({'error': 'Internal server error'})
+    }
+})
+
+app.post('/recetas', async (req, res) => {
+  try{
+    res.status(200).send({
+      "queso con": req.body
+    })
+  }catch(e){
+    res.status(500).send({'error': 'Internal server error'})
+  }
+})
 
 app.post('/jugador', async (req, res) => {
   try{
     res.status(200).send({
-      "recibi": req.body
+      "queso con": req.body
     })
   }catch(e){
     res.status(500).send({'error': 'Internal server error'})
