@@ -1,67 +1,45 @@
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    padding: 20px;
-    background-image: url('fondo.jpg'); /* Reemplaza 'ruta_de_la_imagen.jpg' con la ruta de tu imagen JPEG */
-    background-size: cover; /* Esto asegura que la imagen cubra todo el fondo */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    display: flex; /* Utilizamos flexbox para centrar */
-    justify-content: center; /* Centramos horizontalmente */
-    align-items: center; /* Centramos verticalmente */
-    text-align: center; /* Alineamos el texto al centro */
+  font-family: 'UnifrakturMaguntia', serif, sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+  background-image: url('fondo.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
-    .unifrakturmaguntia-regular {
-        font-family: "UnifrakturMaguntia", cursive;
-        font-weight: 400;
-        font-style: normal;
-      }
-      .merriweather-light {
-        font-family: "Merriweather", serif;
-        font-weight: 300;
-        font-style: normal;
-      }
-      
-      .merriweather-regular {
-        font-family: "Merriweather", serif;
-        font-weight: 400;
-        font-style: normal;
-      }
-      
-      .merriweather-bold {
-        font-family: "Merriweather", serif;
-        font-weight: 700;
-        font-style: normal;
-      }
-      
-      .merriweather-black {
-        font-family: "Merriweather", serif;
-        font-weight: 900;
-        font-style: normal;
-      }
-      
-      .merriweather-light-italic {
-        font-family: "Merriweather", serif;
-        font-weight: 300;
-        font-style: italic;
-      }
-      
-      .merriweather-regular-italic {
-        font-family: "Merriweather", serif;
-        font-weight: 400;
-        font-style: italic;
-      }
-      
-      .merriweather-bold-italic {
-        font-family: "Merriweather", serif;
-        font-weight: 700;
-        font-style: italic;
-      }
-      
-      .merriweather-black-italic {
-        font-family: "Merriweather", serif;
-        font-weight: 900;
-        font-style: italic;
-      }
-      
-    
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
 
+h1 {
+  text-align: center;
+  text-shadow: 0 0 10px #92acff, 0 0 10px #ffffff;
+}
+
+form {
+  margin-top: 20px;
+}
+
+input[type="text"] {
+  width: 80%;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
