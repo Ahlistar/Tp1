@@ -4,7 +4,7 @@ body {
   padding: 20px;
   background-image: url('fondo.jpg');
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   display: flex;
   justify-content: center;
   align-items: center;
