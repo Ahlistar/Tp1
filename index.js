@@ -38,14 +38,6 @@ app.get('/hola', async (req, res) => {
     }
 })
 
-app.get('/jamon', async (req, res) => {
-    try{
-      res.status(200).send({"msg": "El jamon con queso es rico"})
-      }catch(e){
-        res.status(500).send({'error': 'Internal server error'})
-      }
-  })
-
 
 app.post('/jugador', async (req, res) => {
   try{
