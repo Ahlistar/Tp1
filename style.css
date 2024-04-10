@@ -1,35 +1,17 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'UnifrakturMaguntia', serif, sans-serif;
     line-height: 1.6;
     padding: 20px;
-    background-image: url('fondo.jpg'); /* Reemplaza 'ruta_de_la_imagen.jpg' con la ruta de tu imagen JPEG */
-    background-size: cover; /* Esto asegura que la imagen cubra todo el fondo */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    
+    background: url('fondo.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 
-    .unifrakturmaguntia-regular {
-        font-family: "UnifrakturMaguntia", cursive;
-        font-weight: 400;
-        font-style: normal;
-    }
-
-    .search_bar input[type="text"] {
-        width: 100%; /* Full width */
-        padding: 12px 20px; /* Add some padding */
-        margin: 8px 0; /* Add some margin */
-        box-sizing: border-box; /* Make sure that padding and width stays in place */
-        border: 2px solid #ccc; /* Add a border */
-        border-radius: 4px; /* Rounded corners */
-        font-size: 16px; /* Increase font size */
-    }
-
-    .search_bar input[type="text"]:focus + .icon {
-        animation: slideIn 0.5s forwards;
-    }
-    
-    @keyframes slideIn {
-        from { transform: translateX(-100%); }
-        to { transform: translateX(0); }
-    }
-    
+h1 {
+    text-align: center;
+    text-shadow: 0 0 10px #92acff, 0 0 10px #fff;
+    font-size: 60px;
 }
