@@ -64,18 +64,4 @@ body {
       }
       
     
-}h1 {
-  font-family: 'Victorian', sans-serif;
-}
 
-.spetial-font{
-  font-family: 'UnifrakturMaguntia', sans-serif;
-}
-
-p { font-family: 'Victorian', serif; }
-
-@font-face {
-  font-family: 'Victorian';
-  src: url("fuentes/great-victorian.standard.woff") format("woff"),
-      url("fuentes/great-victorian.standard.woff") format("woff");
-}
