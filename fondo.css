@@ -28,8 +28,8 @@ body {
 
 @font-face {
     font-family: 'Victorian';
-    src: url('greatvictorian-standard-webfont.woff2') format('woff2'),
-         url('greatvictorian-standard-webfont.woff') format('woff');
+    src: url('Fuentes/greatvictorian-standard-webfont.woff2') format('woff2'),
+         url('Fuentes/greatvictorian-standard-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
