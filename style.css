@@ -15,4 +15,24 @@ body {
         font-weight: 400;
         font-style: normal;
     }
+
+    .search_bar input[type="text"] {
+        width: 100%; /* Full width */
+        padding: 12px 20px; /* Add some padding */
+        margin: 8px 0; /* Add some margin */
+        box-sizing: border-box; /* Make sure that padding and width stays in place */
+        border: 2px solid #ccc; /* Add a border */
+        border-radius: 4px; /* Rounded corners */
+        font-size: 16px; /* Increase font size */
+    }
+
+    .search_bar input[type="text"]:focus + .icon {
+        animation: slideIn 0.5s forwards;
+    }
+    
+    @keyframes slideIn {
+        from { transform: translateX(-100%); }
+        to { transform: translateX(0); }
+    }
+    
 }
