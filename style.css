@@ -1,5 +1,5 @@
 body {
-    font-family: "Victorian",Arial, sans-serif;
+    font-family: Arial, sans-serif;
     line-height: 1.6;
     padding: 20px;
     background-image: url('fondo.jpg'); /* Reemplaza 'ruta_de_la_imagen.jpg' con la ruta de tu imagen JPEG */
@@ -65,14 +65,14 @@ body {
       
     
 }h1 {
-  font-family: 'UnifrakturMaguntia', sans-serif;
+  font-family: 'Victorian', sans-serif;
 }
 
 .spetial-font{
   font-family: 'UnifrakturMaguntia', sans-serif;
 }
 
-p { font-family: 'Victorian', Times, serif; }
+p { font-family: 'Victorian', serif; }
 
 @font-face {
   font-family: 'Victorian';
