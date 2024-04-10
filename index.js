@@ -3,40 +3,17 @@ const cors = require('cors');
 const path = require('path'); // Import path module
 const bodyParser = require('body-parser');
 
-
-
 const app = express();
 const port = 3000;
 
-// Middleware para analizar el cuerpo de las solicitudes entrantes
+
+//COSAS QUE NO SE QUE HACEN :D
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-// Allow all cross-origin requests
-app.use(cors());
+app.use(cors());app.use(express.json());app.use(express.urlencoded({ extended: true }));app.use(express.static(path.join(__dirname, 'public')));
 
-// Middleware to parse JSON bodies
-app.use(express.json());
-
-// Middleware to parse URL-encoded bodies
-app.use(express.urlencoded({ extended: true }));
-
-// Serve static files from the public directory
-app.use(express.static(path.join(__dirname, 'public')));
-
-// -------------------------------------------- ENDPOINTS --------------------------------------------
-
-/****************************************
- * Business
-****************************************/
-
-app.get('/hola', async (req, res) => {
-  try{
-    res.status(200).send({"msg": "HOLA"})
-    }catch(e){
-      res.status(500).send({'error': 'Internal server error'})
-    }
-})
+// ENDPOINTS ACA ABAJO :3
 
 app.get('/jamon', async (req, res) => {
   try{
@@ -56,27 +33,7 @@ app.post('/recetas', async (req, res) => {
   }
 })
 
-app.post('/jugador', async (req, res) => {
-  try{
-    res.status(200).send({
-      "queso con": req.body
-    })
-  }catch(e){
-    res.status(500).send({'error': 'Internal server error'})
-  }
-})
-
-
-app.get('/boom', async (req, res) => {
-  res.status(500).json({ message: "My bad" })
-})
-
-app.get('/players/salary', async (req, res) => {
-  res.status(403).send({
-    'error': 'Cannot access this information'
-  })
-})
-
+//Avisa en consola donde esta el server
 app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+  console.log(`La cocina esta en http://localhost:${port}`);
 });
