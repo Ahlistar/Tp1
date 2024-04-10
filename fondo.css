@@ -2,6 +2,21 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     padding: 20px;
+    background-image: url('fondo.jpg'); /* Reemplaza 'ruta_de_la_imagen.jpg' con la ruta de tu imagen JPEG */
+    background-size: cover; /* Esto asegura que la imagen cubra todo el fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    display: flex; /* Utilizamos flexbox para centrar */
+    justify-content: center; /* Centramos horizontalmente */
+    align-items: center; /* Centramos verticalmente */
+    text-align: center; /* Alineamos el texto al centro */
+
+    
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
     background-image: url('fondo.jpg');
     background-size: cover;
     background-repeat: no-repeat;
