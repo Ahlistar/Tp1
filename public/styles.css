@@ -1,18 +1,13 @@
+@font-face {
+    font-family: 'Great Victorian';
+    src: url('fonts/GreatVictorian-Swashed.woff') format('woff'); /* Replace 'great_victorian.woff' with the path to your font file */
+    /* Add additional src declarations if your font has multiple file formats (e.g., woff2, ttf) */
+}
+
+/* Now you can use the font-family in your styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Great Victorian', Arial, sans-serif;
     line-height: 1.6;
     padding: 20px;
     background-image: url('fondo.jpg'); /* Reemplaza 'ruta_de_la_imagen.jpg' con la ruta de tu imagen JPEG */
-    background-size: cover; /* Esto asegura que la imagen cubra todo el fondo */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    display: flex; /* Utilizamos flexbox para centrar */
-    justify-content: center; /* Centramos horizontalmente */
-    align-items: center; /* Centramos verticalmente */
-    text-align: center; /* Alineamos el texto al centro */
-
-    .unifrakturmaguntia-regular {
-        font-family: "UnifrakturMaguntia", cursive;
-        font-weight: 400;
-        font-style: normal;
-    }
 }
