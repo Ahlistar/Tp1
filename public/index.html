@@ -1,41 +1,33 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recetas miau</title>
+    <title>Recetas :3</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
             padding: 20px;
-            background-image: url('fondo.jpg'); /* Reemplaza 'ruta_de_la_imagen.jpg' con la ruta de tu imagen JPEG */
-            background-size: cover; /* Esto asegura que la imagen cubra todo el fondo */
-            background-repeat: no-repeat; /* Evita que la imagen se repita */
-        }
-
-        h1 {
-            margin-bottom: 20px;
-        }
-
-        .endpoint {
-            margin-bottom: 30px;
-        }
-
-        .endpoint h2 {
-            margin-bottom: 10px;
-        }
-
-        .endpoint p {
-            margin-bottom: 5px;
+            background-image: url('fondo.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
         }
     </style>
+    <!-- Enlaza el archivo CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>my API es un jamon</h1>
 
     <div class="endpoint">
-        <h2>HOLA SOY MANUEL</h2>
+        <!-- Agregamos la clase 'manuel-text' al título -->
+        <h2 class="manuel-text">HOLA SOY MANUEL</h2>
         <p>me gusta el pezcado.</p>
         <p>Pero, no el sushi</p>
         <ul>
@@ -50,18 +42,6 @@
                     },
                     ...
                 ]
-            </code>
-        </pre>
-    </div>
-
-    <div class="endpoint">
-        <h2>GET /helloworld</h2>
-        <p>Returns a JSON response with a greeting message.</p>
-        <pre>
-            <code>
-                {
-                    "message": "Hello world"
-                }
             </code>
         </pre>
     </div>

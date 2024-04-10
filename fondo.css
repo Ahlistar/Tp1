@@ -2,7 +2,32 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     padding: 20px;
-    background-image: url('fondo.jpg'); /* Reemplaza 'ruta_de_la_imagen.jpg' con la ruta de tu imagen JPEG */
-    background-size: cover; /* Esto asegura que la imagen cubra todo el fondo */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-image: url('fondo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.endpoint {
+    margin-bottom: 30px;
+}
+
+.endpoint h2 {
+    margin-bottom: 10px;
+}
+
+.endpoint p {
+    margin-bottom: 5px;
+}
+
+/* Definimos la fuente GreatVictorian-Standard y la aplicamos al texto "Hola soy Manuel" */
+.endpoint .manuel-text {
+    font-family: 'GreatVictorian-Standard', Arial, sans-serif;
 }
