@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Victorian",Arial, sans-serif;
     line-height: 1.6;
     padding: 20px;
     background-image: url('fondo.jpg'); /* Reemplaza 'ruta_de_la_imagen.jpg' con la ruta de tu imagen JPEG */
@@ -72,4 +72,10 @@ body {
   font-family: 'UnifrakturMaguntia', sans-serif;
 }
 
-p { font-family: merriweather-light; }
+p { font-family: 'Victorian', Times, serif; }
+
+@font-face {
+  font-family: 'Victorian';
+  src: url("fuentes/great-victorian.standard.woff") format("woff"),
+      url("fuentes/great-victorian.standard.woff") format("woff");
+}
