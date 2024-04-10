@@ -1,36 +1,82 @@
 const express = require('express');
 const cors = require('cors');
-const path = require('path');
+const path = require('path'); // Import path module
 const bodyParser = require('body-parser');
+
+
 
 const app = express();
 const port = 3000;
 
-// Middleware
+// Middleware para analizar el cuerpo de las solicitudes entrantes
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+// Allow all cross-origin requests
 app.use(cors());
+
+// Middleware to parse JSON bodies
 app.use(express.json());
+
+// Middleware to parse URL-encoded bodies
 app.use(express.urlencoded({ extended: true }));
+
+// Serve static files from the public directory
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Endpoints
-app.get('/recetas/jamon', async (req, res) => {
-  try {
-    res.status(200).json({ message: "¡Jamon con espinaca, qué rico!" });
-  } catch (error) {
-    res.status(500).json({ error: 'Error interno del servidor' });
-  }
-});
+// -------------------------------------------- ENDPOINTS --------------------------------------------
+
+/****************************************
+ * Business
+****************************************/
+
+app.get('/hola', async (req, res) => {
+  try{
+    res.status(200).send({"msg": "HOLA"})
+    }catch(e){
+      res.status(500).send({'error': 'Internal server error'})
+    }
+})
+
+app.get('/jamon', async (req, res) => {
+  try{
+    res.status(200).send({"msg": "jamon con espinaca q rico"})
+    }catch(e){
+      res.status(500).send({'error': 'Internal server error'})
+    }
+})
 
 app.post('/recetas', async (req, res) => {
-  try {
-    const { ingredientes } = req.body;
-    res.status(200).json({ mensaje: `Receta recibida con ingredientes: ${ingredientes}` });
-  } catch (error) {
-    res.status(500).json({ error: 'Error interno del servidor' });
+  try{
+    res.status(200).send({
+      "queso con": req.body
+    })
+  }catch(e){
+    res.status(500).send({'error': 'Internal server error'})
   }
-});
+})
 
-// Iniciar el servidor
+app.post('/jugador', async (req, res) => {
+  try{
+    res.status(200).send({
+      "queso con": req.body
+    })
+  }catch(e){
+    res.status(500).send({'error': 'Internal server error'})
+  }
+})
+
+
+app.get('/boom', async (req, res) => {
+  res.status(500).json({ message: "My bad" })
+})
+
+app.get('/players/salary', async (req, res) => {
+  res.status(403).send({
+    'error': 'Cannot access this information'
+  })
+})
+
 app.listen(port, () => {
-  console.log(`Servidor funcionando en http://localhost:${port}`);
+  console.log(`Server is running on http://localhost:${port}`);
 });
