@@ -1,45 +1,39 @@
 const express = require('express');
 const cors = require('cors');
-const path = require('path');
+const path = require('path'); // Import path module
 const bodyParser = require('body-parser');
-const serveStatic = require('serve-static');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const port = 3000;
 
-// Middleware
+
+//COSAS QUE NO SE QUE HACEN :D
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(serveStatic(path.join(__dirname, 'public')));
 
-// Routes
+app.use(cors());app.use(express.json());app.use(express.urlencoded({ extended: true }));app.use(express.static(path.join(__dirname, 'public')));
+
+// ENDPOINTS ACA ABAJO :3
+
 app.get('/jamon', async (req, res) => {
-    try {
-        res.status(200).json({ msg: "jamon con espinaca q rico" });
-    } catch (err) {
-        res.status(500).json({ error: 'Internal server error' });
+  try{
+    res.status(200).send({"msg": "jamon con espinaca q rico"})
+    }catch(e){
+      res.status(500).send({'error': 'Internal server error'})
     }
-});
+})
 
 app.post('/recetas', async (req, res) => {
-    try {
-        const { body } = req;
-        res.status(200).json({ "queso con": body });
-    } catch (err) {
-        res.status(500).json({ error: 'Internal server error' });
-    }
-});
+  try{
+    res.status(200).send({
+      "queso con": req.body
+    })
+  }catch(e){
+    res.status(500).send({'error': 'Internal server error'})
+  }
+})
 
-// Error handling middleware
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).json({ error: 'Internal server error' });
-});
-
-// Start the server
-app.listen(PORT, () => {
-  console.log(`La cocina esta en http://localhost:${PORT}`);
+//Avisa en consola donde esta el server
+app.listen(port, () => {
+  console.log(`La cocina esta en http://localhost:${port}`);
 });
