@@ -1,8 +1,8 @@
 <?php
 // Verificamos si se ha enviado una consulta de búsqueda
 if (isset($_GET['q'])) {
-    // Obtenemos la consulta de búsqueda del parámetro GET
-    $query = $_GET['q'];
+    // Obtenemos la consulta de búsqueda del parámetro GET y la limpiamos
+    $query = trim($_GET['q']);
 
     // Directorio donde se encuentran los archivos de recetas
     $directory = 'recetas/';
@@ -16,8 +16,8 @@ if (isset($_GET['q'])) {
         // Leemos el contenido del archivo de receta
         $content = file_get_contents($file);
 
-        // Verificamos si la consulta de búsqueda está en el contenido del archivo
-        if (stripos($content, $query) !== false) {
+        // Verificamos si la consulta de búsqueda está contenida en el título o en el contenido del archivo
+        if (stripos($content, $query) !== false || stripos(basename($file, '.md'), $query) !== false) {
             // Si hay una coincidencia, añadimos el nombre del archivo a los resultados
             $results[] = $file;
         }
