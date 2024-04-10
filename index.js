@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 
 
 const app = express();
-const port = 80;
+const port = 3000;
 
 // Middleware para analizar el cuerpo de las solicitudes entrantes
 app.use(bodyParser.urlencoded({ extended: false }));
