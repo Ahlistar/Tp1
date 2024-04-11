@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'Great Victorian';
+    src: url('fonts/GreatVictorian-Swashed.woff') format('woff'); /* Replace 'great_victorian.woff' with the path to your font file */
+    /* Add additional src declarations if your font has multiple file formats (e.g., woff2, ttf) */
+}
+
+/* Now you can use the font-family in your styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    background-image: url('fondo.jpg'); /* Reemplaza 'ruta_de_la_imagen.jpg' con la ruta de tu imagen JPEG */
+}
+
+h2 {
+    padding: 20px;
+    font-family:  'GreatVictorian', Arial, sans-serif;
+    font-size: 90px;
+    text-shadow: 0 0 30px #ffffff, 0 0 30px #ffffff; 
+    margin-bottom: 0; 
+}

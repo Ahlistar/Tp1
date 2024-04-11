@@ -43,16 +43,74 @@ app.get('/search', (req, res) => {
         recipe.name.toLowerCase().includes(query)
     );
 
-    // Create an HTML response with the matching recipe names and links to full recipes
-    let responseHTML = '<h2>Search Results:</h2><ul>';
+    // Build the HTML response
+    let responseHTML = `
+        <html>
+        <head>
+            <title>Resultados :3</title>
+            <style>
+                /* CSS styles for the search results page */
+                body {
+                    font-family: Arial, sans-serif;
+                    background-image: url('fondobusqueda.jpg'); /* Adjust the path as needed *
+                    background-position: center;
+                    color: #333; /* Text color */
+                    margin: 0;
+                    padding: 0;
+                }
+                h2 {
+                    padding: 20px;
+                    font-family:  'GreatVictorian', Arial, sans-serif;
+                    font-size: 90px;
+                    text-shadow: 0 0 30px #ffffff, 0 0 30px #ffffff; 
+                    margin-bottom: 0; 
+                }
+                ul {
+                    list-style: none;
+                    padding: 0;
+                    margin: 20px;
+                }
+                li {
+                    padding: 10px;
+                    margin-bottom: 10px;
+                    background-color: #faebd7; /* Light gray background for each list item */
+                    border-radius: 5px;
+                }
+                a {
+                    text-decoration: none;
+                    color: #0066cc;
+                }
+                a:hover {
+                    text-decoration: underline;
+                }
+                h2 {
+                    
+                }
+
+            </style>
+            <link rel="stylesheet" href="searchstyles.css">
+        </head>
+        <body>
+            <h2>Resultadis :b</h2>
+            <ul>
+    `;
+
+    // Add matching recipes as list items with links to full recipes
     matchingRecipes.forEach(recipe => {
         responseHTML += `<li><a href="/recipe/${recipe.name}">${recipe.name}</a></li>`;
     });
-    responseHTML += '</ul>';
 
-    // Send the response
+    // Close the HTML structure
+    responseHTML += `
+            </ul>
+        </body>
+        </html>
+    `;
+
+    // Send the HTML response
     res.send(responseHTML);
 });
+
 
 // Define the /recipe/:name route
 app.get('/recipe/:name', (req, res) => {
