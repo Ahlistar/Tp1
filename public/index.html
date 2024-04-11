@@ -4,46 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recetas :3</title>
-
-
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-
-    
     <style>
-
-h1 {
-    text-align: center;
-    text-shadow: 0 0 10px #92acff, 0 0 10px #ffffff;
-}
+        h1 {
+            font-size: 80px;
+            text-align: center;
+            text-shadow: 0 0 30px #ffffff, 0 0 30px #ffffff; 
+            margin-bottom: 0; 
+        }
 
         body {
-            font-family: serif, sans-serif;
+            font-family:  serif, sans-serif;
             line-height: 1.6;
             padding: 20px;
             background-image: url('fondo.jpg');
-            background-size: cover;
-            background-repeat: repeat;
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
         }
+
+        #searchResults {
+            margin-top: 20px;
+        }
     </style>
-    <!-- Enlaza el archivo CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <div class="endpoint">
         <h1>Recetas</h1>
-        <h1>autalia</h1>
-        <form action="#" method="get">
-            <input type="text" name="q" placeholder="Busquemos recipes :D...">
-            <button type="submit">Q</button>
+        <h1>Autalia</h1>
+        <form action="/search" method="GET">
+            <input type="text" name="query" placeholder="Search recipes...">
+            <input type="submit" value="Search">
         </form>
+        <div id="searchResults"></div>
+        <script src="search.js"></script> <!-- Include the JavaScript file -->
+        
         
 
-    </div>
+    </script>
 
 </body>
 </html>
