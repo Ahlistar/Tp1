@@ -46,29 +46,5 @@
 
     </script>
 
-    <div id="searchResults"></div>
-
-    <script>
-        document.getElementById('searchForm').addEventListener('submit', async function(event) {
-            event.preventDefault(); // Prevent form submission
-
-            const searchTerm = document.getElementById('searchInput').value;
-            const response = await fetch(`/search?q=${encodeURIComponent(searchTerm)}`);
-            const results = await response.json();
-            const searchResultsDiv = document.getElementById('searchResults');
-            searchResultsDiv.innerHTML = '';
-
-            if (results.length === 0) {
-                searchResultsDiv.innerHTML = '<p>No results found.</p>';
-            } else {
-                results.forEach(result => {
-                    const recipeDiv = document.createElement('div');
-                    recipeDiv.innerHTML = `<h2>${result.filename}</h2>${result.content}`;
-                    searchResultsDiv.appendChild(recipeDiv);
-                });
-            }
-        });
-    </script>
-
 </body>
 </html>
