@@ -1,11 +1,14 @@
+const marked = require('marked');
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
+const fs = require('fs');
 const fs = require('fs');
 
 const app = express();
 const port = 3000;
 
+// Middleware setup
 // Middleware setup
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -133,3 +136,4 @@ app.get('/recipe/:name', (req, res) => {
 app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`);
 });
+
